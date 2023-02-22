@@ -10,10 +10,10 @@ export default async (req:any, res:any) => {
         const client = await( new MongoClient(uri,options));
         // res.json(uri);
 
-        const db = client.db("sample_mflix");
+        const db = client.db("glmasterdb");
  
         const movies = await db
-            .collection("comments")
+            .collection("admins")
             .find({})
             .sort({ metacritic: -1 })
             .limit(10)
